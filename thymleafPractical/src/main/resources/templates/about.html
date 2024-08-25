@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>document</title>
+</head>
+
+<body>
+	<h1>About learn code with Anant</h1>
+	<h1>We are learning SPring boot</h1>
+<!--   if need to use variable for whole html then we can use within body or html-->
+	
+	<h1 th:text="${#strings.toUpperCase(name)}"></h1>
+	<p> length of the name is <span th:text="${#strings.length(name)}"></span>
+	<h1 th:text="${currentDate}"></h1>
+	<h2>Name of the owner is <span th:text="${name}"></span></h2>
+	
+	<!--  #local variable - can use in own context-->
+	<div th:with="a=5, b =67, n=${name}">
+<!--  	#using span-->
+	<h1>value of a is <span th:text="${a}"></span></h1>
+<!--  	# using h -->
+	<h1 th:text="'value of b is '+${b}"></h1>
+	
+	<h1>Local value of n is <span th:text="${n}"></span><h1>
+	
+	<h2 th:text ="'sum of '+${a}+' and '+${b}+' is '+${a+b}"></h2>
+	</div>
+</body>
+</html>
